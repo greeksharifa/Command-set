@@ -14,3 +14,10 @@
 | Download | pscp -r 계정명@ip주소:/home/계정명/디렉토리 ./ | 
 | Upload | pscp 파일 계정명@ip주소:/home/계정명/디렉토리\[/파일명] | 
 | | pscp -r 디렉토리 계정명@ip주소:/home/계정명/디렉토리/ |
+
+#### ssh / sftp for windows 10 (build >= 1709)
+
+| Type | Command | 
+| -------- | -------- | 
+| SSH | ssh username@address | 
+| SFTP | sftp username@address | 
