@@ -7,6 +7,16 @@
 | manually | for /f %i in (requirements.txt) do conda install --yes %i |
 | BAT script | for /f %%i in (requirements.txt) do conda install --yes %%i |
 
+#### sftp usage
+
+put의 경우 local system의 해당 파일이 있는 곳으로 먼저 이동해야 함.
+
+| Load | Command | 
+| -------- | -------- | 
+| Connect | sftp 계정명@ip주소
+| Download | get "file-path"
+| Upload | put "file-path"
+
 #### pscp usage
 
 | Load | Command | 
