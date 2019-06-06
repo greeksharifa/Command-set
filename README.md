@@ -1,5 +1,17 @@
 # Command-set
 
+#### Turn a Unicode string to plain ASCII
+thanks to https://stackoverflow.com/a/518232/2809427
+
+```python
+def unicodeToAscii(s):
+    return ''.join(
+        c for c in unicodedata.normalize('NFD', s)
+        if unicodedata.category(c) != 'Mn'
+        and c in all_letters
+    )
+```
+
 #### conda install < requirements.txt in windows
 
 | Type | Command |
