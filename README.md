@@ -37,6 +37,14 @@ put의 경우 local system의 해당 파일이 있는 곳으로 먼저 이동해
 | Upload | pscp 파일 계정명@ip주소:/home/계정명/디렉토리\[/파일명] | 
 | | pscp -r 디렉토리 계정명@ip주소:/home/계정명/디렉토리/ |
 
+
+### Windows cmd
+
+#### 원하는 크기의 파일명 
+
+fsutil file createnew 파일명 사이즈지정
+
+
 ### Graphviz
 
 #### Install
