@@ -1,5 +1,16 @@
 # Command-set
 
+### Windows
+
+#### 실행(Win + R)
+| Run | Command |
+| -------- | -------- |
+| 부팅 정보 확인(멀티부팅) | msconfig | 
+| 부팅 시 암호 입력 해제 | netplwiz |
+| 빌드 버전 확인 | winver |
+| 컴퓨터 관리 | compmgmt.msc |
+| 디스크 정리 | cleanmgr | 
+
 #### Turn a Unicode string to plain ASCII
 thanks to https://stackoverflow.com/a/518232/2809427
 
