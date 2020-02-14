@@ -5,6 +5,7 @@
 #### 실행(Win + R)
 | Run | Command |
 | -------- | -------- |
+| OS 정보 확인(Legacy/UEFI) | msinfo32 |
 | 부팅 정보 확인(멀티부팅) | msconfig | 
 | 부팅 시 암호 입력 해제 | netplwiz |
 | 빌드 버전 확인 | winver |
