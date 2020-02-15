@@ -12,6 +12,14 @@
 | 컴퓨터 관리 | compmgmt.msc |
 | 디스크 정리 | cleanmgr | 
 
+### Ubuntu 18.04
+| Run | Command |
+| -------- | -------- |
+| 기본 편집기 변경 | sudo update-alternatives --config editor |
+| 한글 설치 | ibus-setup |
+
+
+
 #### Powershell
 
 최고성능 해제
