@@ -13,12 +13,12 @@
 | 디스크 정리 | cleanmgr | 
 
 #### 멀티부팅 이름 변경
-bcdedit /v
+bcdedit /v \
 bcdedit /set {identifier} description "name"
 
 #### Powershell
 
-최고성능 해제
+최고성능 해제 \
 powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
 
 
