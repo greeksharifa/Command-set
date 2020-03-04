@@ -12,18 +12,22 @@
 | 컴퓨터 관리 | compmgmt.msc |
 | 디스크 정리 | cleanmgr | 
 
+#### 멀티부팅 이름 변경
+bcdedit /v
+bcdedit /set {identifier} description "name"
+
+#### Powershell
+
+최고성능 해제
+powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+
+
 ### Ubuntu 18.04
 | Run | Command |
 | -------- | -------- |
 | 기본 편집기 변경 | sudo update-alternatives --config editor |
 | 한글 설치 | ibus-setup |
 
-
-
-#### Powershell
-
-최고성능 해제
-powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
 
 #### Turn a Unicode string to plain ASCII
 thanks to https://stackoverflow.com/a/518232/2809427
