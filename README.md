@@ -28,6 +28,29 @@ powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
 | 기본 편집기 변경 | sudo update-alternatives --config editor |
 | 한글 설치 | ibus-setup |
 
+#### Python font list 출력하기
+
+```python
+import matplotlib.font_manager
+from IPython.core.display import HTML
+
+print(set([f.name for f in matplotlib.font_manager.fontManager.ttflist]))
+
+### HTML로 보고 싶다면? (잘 되는진 모름)
+
+def make_html(fontname):
+    return "<p>{font}: <span style='font-family:{font}; font-size: 24px;'>{font}</p>".format(font=fontname)
+
+code = "\n".join([make_html(font) for font in sorted(set([f.name for f in matplotlib.font_manager.fontManager.ttflist]))])
+
+HTML("<div style='column-count: 2;'>{}</div>".format(code))
+```
+
+```python
+import matplotlib.font_manager
+matplotlib.font_manager.findSystemFonts(fontpaths=None, fontext='ttf')
+```
+
 
 #### Turn a Unicode string to plain ASCII
 thanks to https://stackoverflow.com/a/518232/2809427
