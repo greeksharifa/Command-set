@@ -58,6 +58,7 @@ get-appxpackage *holographic* | remove-appxpackage
 
 Set-MpPreference -DisableRealtimeMonitoring $true
 
+Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 
 Get-AppxPackage *zunemusic* | Remove-AppxPackage
 Get-AppxPackage *soundrecorder* | Remove-AppxPackage
