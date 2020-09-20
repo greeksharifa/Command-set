@@ -54,6 +54,7 @@ get-appxpackage *connectivitystore* | remove-appxpackage
 get-appxpackage *oneconnect* | remove-appxpackage
 get-appxpackage *sticky* | remove-appxpackage
 get-appxpackage *holographic* | remove-appxpackage
+get-appxpackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage
 
 
 Set-MpPreference -DisableRealtimeMonitoring $true
