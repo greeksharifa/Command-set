@@ -130,11 +130,15 @@ put의 경우 local system의 해당 파일이 있는 곳으로 먼저 이동해
 
 #### pscp usage
 
+다운로드: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
 | Load | Command | 
 | -------- | -------- | 
 | Download | pscp -r 계정명@ip주소:/home/계정명/디렉토리 ./ | 
 | Upload | pscp 파일 계정명@ip주소:/home/계정명/디렉토리\[/파일명] | 
 | | pscp -r 디렉토리 계정명@ip주소:/home/계정명/디렉토리/ |
+| ssh_init 에러 시 | pscp -P 22 파일 계정명@ip주소:/home/계정명/디렉토리\[/파일명] | 
+
 
 
 ### Windows cmd
