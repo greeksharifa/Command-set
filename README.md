@@ -12,9 +12,20 @@
 | 컴퓨터 관리 | compmgmt.msc |
 | 디스크 정리 | cleanmgr | 
 
+#### 강제종료
+
+tasklist \
+taskkill /f /im cmd.exe  \
+taskkill /f /PID 36036
+
+
+
+
 #### 멀티부팅 이름 변경
 bcdedit /v \
 bcdedit /set {identifier} description "name"
+
+
 
 #### Powershell
 
