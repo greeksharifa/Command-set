@@ -18,7 +18,10 @@ tasklist \
 taskkill /f /im cmd.exe  \
 taskkill /f /PID 36036
 
+#### 파일 강제삭제
 
+del /s /q (filename) \ 
+rd /s /q (name)
 
 
 #### 멀티부팅 이름 변경
