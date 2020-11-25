@@ -153,7 +153,9 @@ put의 경우 local system의 해당 파일이 있는 곳으로 먼저 이동해
 | | pscp -r 디렉토리 계정명@ip주소:/home/계정명/디렉토리/ |
 | ssh_init 에러 시 | pscp -P 22 파일 계정명@ip주소:/home/계정명/디렉토리\[/파일명] | 
 
+#### ssh
 
+ssh-keygen -R 147.46.242.124
 
 ### Windows cmd
 
