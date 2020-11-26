@@ -89,6 +89,16 @@ Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 | 기본 편집기 변경 | sudo update-alternatives --config editor |
 | 한글 설치 | ibus-setup |
 
+#### python 필수 설치 목록
+
+pip install tensorflow
+
+pip install torch==1.7.0+cu101 torchvision==0.8.1+cu101 torchaudio===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+pip install numpy pandas matplotlib seaborn beautifulsoup4 nltk scipy scikit-learn tqdm
+
+
+
 #### Python font list 출력하기
 
 ```python
