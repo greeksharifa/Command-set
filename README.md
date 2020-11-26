@@ -82,6 +82,19 @@ Get-appxpackage *windowsphone* | remove-appxpackage
 Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 ```
 
+### CUDA 설치
+
+- https://www.python.org/downloads/release/python-386/
+- https://www.tensorflow.org/install/gpu
+- https://pytorch.org/get-started/locally/
+
+- https://www.nvidia.com/en-us/geforce/geforce-experience/
+- https://developer.nvidia.com/cuda-toolkit-archive
+- https://developer.nvidia.com/rdp/cudnn-archive
+
+Tensorflow 버전 확인:  \
+https://coding-groot.tistory.com/87
+
 
 ### Ubuntu 18.04
 | Run | Command |
