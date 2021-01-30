@@ -111,6 +111,11 @@ pip install torch==1.7.0+cu101 torchvision==0.8.1+cu101 torchaudio===0.7.0 -f ht
 pip install numpy pandas matplotlib seaborn beautifulsoup4 nltk scipy scikit-learn tqdm
 
 
+### 구글 드라이브 파일 받기
+
+wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=파일ID' -O 파일명
+
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=파일ID' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=파일ID" -O 파일명 && rm -rf /tmp/cookies.txt
 
 #### Python font list 출력하기
 
