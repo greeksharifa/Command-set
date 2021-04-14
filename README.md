@@ -95,6 +95,13 @@ Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 Tensorflow 버전 확인:  \
 https://coding-groot.tistory.com/87
 
+### ipynb to py
+
+pip uninstall nbconvert
+pip install nbconvert==5.6.1
+
+jupyter nbconvert --to script [filename].ipynb 
+
 
 ### Ubuntu 18.04
 | Run | Command |
