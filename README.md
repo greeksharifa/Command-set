@@ -169,12 +169,12 @@ matplotlib.font_manager.findSystemFonts(fontpaths=None, fontext='ttf')
 thanks to https://stackoverflow.com/a/518232/2809427
 
 ```python
-def unicodeToAscii(s):
-    return ''.join(
-        c for c in unicodedata.normalize('NFD', s)
-        if unicodedata.category(c) != 'Mn'
-        and c in all_letters
-    )
+import unidecode
+
+accented_string = 'Plav (České Budějovice)'
+unaccented_string = unidecode.unidecode(accented_string)
+
+print(unaccented_string)
 ```
 
 #### conda install < requirements.txt in windows
