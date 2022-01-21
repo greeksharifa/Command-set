@@ -48,12 +48,9 @@ Get-AppxPackage *windowsmaps* | Remove-AppxPackage
 get-appxpackage *solitaire* | remove-appxpackag
 Get-AppxPackage *onenote* | Remove-AppxPackage
 Get-AppxPackage *people* | Remove-AppxPackage
-Get-AppxPackage *xboxapp* | Remove-AppxPackage
 Get-AppxPackage Microsoft.Microsoft3DViewer | Remove-AppxPackage
 get-appxpackage *messaging* | remove-appxpackage
 get-appxpackage *sway* | remove-appxpackage
-get-appxpackage *commsphone* | remove-appxpackage
-get-appxpackage *phone* | remove-appxpackage
 get-appxpackage *communicationsapps* | remove-appxpackage
 get-appxpackage *zunevideo* | remove-appxpackage
 get-appxpackage *bingfinance* | remove-appxpackage
@@ -62,22 +59,23 @@ get-appxpackage *bingnews* | remove-appxpackage
 get-appxpackage *camera* | remove-appxpackage
 get-appxpackage *maps* | remove-appxpackage
 get-appxpackage *soundrecorder* | remove-appxpackage
-get-appxpackage *xbox* | remove-appxpackage
 get-appxpackage *wallet* | remove-appxpackage
 get-appxpackage *connectivitystore* | remove-appxpackage
 get-appxpackage *oneconnect* | remove-appxpackage
 get-appxpackage *sticky* | remove-appxpackage
 get-appxpackage *holographic* | remove-appxpackage
-get-appxpackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage
-
-
-Set-MpPreference -DisableRealtimeMonitoring $true
-
-Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
-
 Get-AppxPackage *zunemusic* | Remove-AppxPackage
 Get-AppxPackage *soundrecorder* | Remove-AppxPackage
+
+
+get-appxpackage *commsphone* | remove-appxpackage
+get-appxpackage *phone* | remove-appxpackage
+get-appxpackage *xbox* | remove-appxpackage
+Get-AppxPackage *xboxapp* | Remove-AppxPackage
+get-appxpackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage
+Set-MpPreference -DisableRealtimeMonitoring $true
 Get-AppxPackage *bingweather* | Remove-AppxPackage
+Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 Get-appxpackage *windowsphone* | remove-appxpackage
 Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 ```
