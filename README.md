@@ -82,6 +82,15 @@ Get-appxpackage *windowsphone* | remove-appxpackage
 Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 ```
 
+### python 절대 경로 import
+
+```python
+import sys
+sys.path.append('/home/test')
+```
+
+
+
 ### CUDA 설치
 
 - https://www.python.org/downloads/release/python-386/
