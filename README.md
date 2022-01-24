@@ -2,6 +2,10 @@
 
 ### Windows
 
+####
+
+Magic Trackpad 2: https://github.com/imbushuo/mac-precision-touchpad/releases/tag/2105-3979
+
 #### 실행(Win + R)
 | Run | Command |
 | -------- | -------- |
@@ -27,6 +31,8 @@ rd /s /q (name)
 #### 멀티부팅 이름 변경
 bcdedit /v \
 bcdedit /set {identifier} description "name"
+
+
 
 
 
