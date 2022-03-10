@@ -72,6 +72,7 @@ get-appxpackage *sticky* | remove-appxpackage
 get-appxpackage *holographic* | remove-appxpackage
 Get-AppxPackage *zunemusic* | Remove-AppxPackage
 Get-AppxPackage *soundrecorder* | Remove-AppxPackage
+Get-AppxPackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage
 
 
 get-appxpackage *commsphone* | remove-appxpackage
