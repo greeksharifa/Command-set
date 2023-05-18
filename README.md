@@ -33,7 +33,11 @@ bcdedit /v \
 bcdedit /set {identifier} description "name"
 
 
-
+#### 키 매핑 바꾸기
+https://lightinglife.tistory.com/entry/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%97%90%EC%84%9C-%EB%A7%A5%EC%B2%98%EB%9F%BC-Capslock%EC%BA%A1%EC%8A%A4%EB%9D%BD%ED%82%A4%EB%A5%BC-%ED%95%9C%EC%98%81%ED%82%A4%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95by-%EB%A0%88%EC%A7%80%EC%8A%A4%ED%8A%B8%EB%A6%AC-%ED%8E%B8%EC%A7%91
+00 00 00 00 00 00 00 00
+02 00 00 00 38 00 3A 00
+3A 00 38 00
 
 
 #### Powershell
