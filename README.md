@@ -153,6 +153,17 @@ pip install torch==1.7.0+cu101 torchvision==0.8.1+cu101 torchaudio===0.7.0 -f ht
 pip install numpy pandas matplotlib seaborn beautifulsoup4 nltk scipy scikit-learn tqdm
 
 
+### terminal에서 파일 트리 출력
+
+```bash
+sudo apt-get install tree
+# To see the directory tree, use
+tree /path/to/folder
+# Or navigate to a directory and just use
+tree
+```
+
+
 ### 구글 드라이브 파일 받기
 
 wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=파일ID' -O 파일명
