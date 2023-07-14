@@ -1,5 +1,29 @@
 # Command-set
 
+### Github
+
+![image](https://github.com/greeksharifa/Command-set/assets/26247624/a6ce7c34-72be-45e6-8fae-7e6c1188b04e)
+
+```bash
+https://github.com/greeksharifa/asdfasdfdsfdsa.git
+
+# ------------------------------------------------------------------------------------
+
+echo "# asdfasdfdsfdsa" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/greeksharifa/asdfasdfdsfdsa.git
+git push -u origin main
+
+# ------------------------------------------------------------------------------------
+
+git remote add origin https://github.com/greeksharifa/asdfasdfdsfdsa.git
+git branch -M main
+git push -u origin main
+```
+
 ### Windows
 
 ####
