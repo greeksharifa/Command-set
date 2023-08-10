@@ -187,6 +187,14 @@ tree /path/to/folder
 tree
 ```
 
+### no left space on device
+
+/dev/loop/ 들이 많고 가득 찼을 경우
+
+```bash
+sudo apt autoremove --purge snapd
+```
+
 
 ### 구글 드라이브 파일 받기
 
