@@ -162,11 +162,21 @@ pip install nbconvert==5.6.1
 jupyter nbconvert --to script [filename].ipynb 
 
 
-### Ubuntu 18.04
+### Ubuntu 
 | Run | Command |
 | -------- | -------- |
 | 기본 편집기 변경 | sudo update-alternatives --config editor |
 | 한글 설치 | ibus-setup |
+
+
+#### 권한
+```bash
+# user(owner)/group/other_user
+# +: 권한부여, -: 권한삭제
+chmod -R ugo+rwx 'folder'
+chmod -R go-x 'folder'
+chmod -R -x+X -- 'folder with restored backup'    # How to recursively remove execute permissions from files without touching folders
+```
 
 #### python 필수 설치 목록
 
