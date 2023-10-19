@@ -143,6 +143,13 @@ sys.path.append('/home/test')
 Tensorflow 버전 확인:  \
 https://coding-groot.tistory.com/87
 
+cuda / cudnn 버전 확인
+```python
+import torch
+print("cudnn version:{}".format(torch.backends.cudnn.version()))
+print("cuda version: {}".format(torch.version.cuda))
+```
+
 ### GPU 번호 지정
 
 ```python
