@@ -24,6 +24,12 @@ git branch -M main
 git push -u origin main
 ```
 
+#### dependency 관련 오류
+강제 설치
+```bash
+pip install --upgrade --no-deps --force-reinstall -r requirements.txt
+```
+
 ### Windows
 
 ####
