@@ -149,6 +149,10 @@ import torch
 print("cudnn version:{}".format(torch.backends.cudnn.version()))
 print("cuda version: {}".format(torch.version.cuda))
 ```
+```bash
+# cudnn
+cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+```
 
 ### GPU 번호 지정
 
@@ -176,6 +180,12 @@ jupyter nbconvert --to script [filename].ipynb
 
 
 ### Ubuntu 
+
+#### ubuntu 버전 확인
+```bash
+cat /etc/issue
+```
+
 | Run | Command |
 | -------- | -------- |
 | 기본 편집기 변경 | sudo update-alternatives --config editor |
