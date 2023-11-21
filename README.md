@@ -30,6 +30,14 @@ git push -u origin main
 pip install --upgrade --no-deps --force-reinstall -r requirements.txt
 ```
 
+### huggingface
+
+#### model local download
+```python
+from huggingface_hub import snapshot_download
+snapshot_download(repo_id="bert-base-uncased", cache_dir="/data2/")
+```
+
 ### Windows
 
 ####
