@@ -53,6 +53,7 @@ Magic Trackpad 2: https://github.com/imbushuo/mac-precision-touchpad/releases/ta
 | 빌드 버전 확인 | winver |
 | 컴퓨터 관리 | compmgmt.msc |
 | 디스크 정리 | cleanmgr | 
+| 공인ip | nslookup myip.opendns.com. resolver1.opendns.com |
 
 #### 강제종료
 
