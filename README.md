@@ -188,7 +188,7 @@ pip install nbconvert==5.6.1
 jupyter nbconvert --to script [filename].ipynb 
 
 
-### Ubuntu 
+### Ubuntu(Linux)
 
 #### ubuntu 버전 확인
 ```bash
@@ -199,6 +199,11 @@ cat /etc/issue
 | -------- | -------- |
 | 기본 편집기 변경 | sudo update-alternatives --config editor |
 | 한글 설치 | ibus-setup |
+
+#### $'￦r': command not found 
+```bash
+sed -i 's/\r$//' 파일명
+```
 
 
 #### 권한
