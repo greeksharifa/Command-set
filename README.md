@@ -371,3 +371,63 @@ save_graph_as_svg(dot_graph, 'simple_model')
 
 check_call(['dot','-Tpng','simple_model','-o','simple_model.png'])
 ```
+
+### clip video by ffmpeg
+```python
+"""
+conda uninstall ffmpeg  
+conda install -c conda-forge ffmpeg 
+
+# if Unknown encoder 'libx264': check
+ffmpeg -encoders | grep 264
+
+"""
+
+import csv
+import subprocess
+import os
+from tqdm import tqdm
+
+
+#  ffmpeg -y -ss start_time -to end_time -i input_path -codec copy output_path
+def clip_video(input_video, output_video, start_time, end_time):
+    command = [
+        'ffmpeg',
+        '-ss', str(start_time),
+        '-i', input_video,
+        '-t', str(end_time - start_time),
+        '-c:v', 'libx264',
+        '-c:a', 'aac',
+        '-strict', 'experimental',
+        '-y',
+        output_video
+    ]
+    try:
+        subprocess.run(command, check=True, stderr=subprocess.PIPE)
+        print(f"Successfully clipped: {output_video}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error clipping {input_video}: {e}")
+        print(f"FFmpeg error output: {e.stderr.decode()}")
+
+def main():
+    csv_file = 'Video_Segments.csv'  # Replace with your CSV file name
+    video_directory = '/data/charades/Charades_v1_480/'   # Replace with the directory containing your videos
+    output_directory = 'videos/'  # Replace with the directory where you want to save the clipped videos
+
+    with open(csv_file, 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for i, row in enumerate(tqdm(csv_reader)):
+            video_id = row['video_id']
+            start_time = float(row['start'])
+            end_time = float(row['end'])
+
+            input_video = os.path.join(video_directory, f"{video_id}.mp4")
+            output_video = os.path.join(output_directory, f"{video_id}_{start_time}_{end_time}.mp4")
+
+            print(f"Clipping {input_video} from {start_time} to {end_time}")
+            clip_video(input_video, output_video, start_time, end_time)
+            # if i > 5: break
+
+if __name__ == "__main__":
+    main()
+```
