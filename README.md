@@ -431,3 +431,19 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+
+
+# Resolving Error 
+
+## Undefined Symbol
+
+```bash
+ImportError: /home/ywjang/miniconda3/envs/IGVLM/lib/python3.10/site-packages/flash_attn_2_cuda.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN2at4_ops15sum_IntList_out4callERKNS_6TensorEN3c1016OptionalArrayRefIlEEbSt8optionalINS5_10ScalarTypeEERS2_
+```
+```bash
+pip uninstall flash-attn -y
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+pip install flash-attn --no-build-isolation --no-cache-dir
+```
