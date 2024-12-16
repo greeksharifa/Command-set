@@ -447,3 +447,34 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 pip install flash-attn --no-build-isolation --no-cache-dir
 ```
+
+## JSON single quote and aposthrophe
+```python
+def safe_literal_eval(s):
+    """
+    Safely evaluates a single-quoted string containing apostrophes into a Python object.
+    """
+    # Step 1: Escape single quotes inside the string values
+    # Matches single quotes that are not part of the enclosing quotes
+    s_fixed = re.sub(r"(?<!\w)'(.*?)'(?!\w)", r'"\1"', s)
+    
+    print(f"Fixed string: {s_fixed}")
+    
+    try:
+        # Step 2: Evaluate the fixed string
+        result = literal_eval(s_fixed)
+        return result
+    except Exception as e:
+        print(f"Error during evaluation: {e}")
+        return None
+    # or
+    # Step 2: Fix JSON style (ensure keys are quoted)
+    try:
+        # Use json.loads to validate the result
+        parsed = json.loads(s_fixed)
+        return parsed
+    except json.JSONDecodeError as e:
+        print(f"Error: Unable to parse string. Details: {e}")
+        return None
+```
+
