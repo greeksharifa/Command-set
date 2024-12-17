@@ -432,6 +432,24 @@ if __name__ == "__main__":
     main()
 ```
 
+---
+
+# Huggingface
+
+## 모델 로컬 다운로드
+```bash
+git lfs clone https://huggingface.co/<model_id>
+```
+
+## 데이터셋 로컬 다운로드
+```python
+from datasets import load_dataset
+dataset = load_dataset(hugging face dataset)
+DATA_PATH = './' #현재 폴더 위치
+dataset.save_to_disk(DATA_PATH)
+```
+
+---
 
 
 # Resolving Error 
