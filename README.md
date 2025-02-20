@@ -66,6 +66,16 @@ taskkill /f /PID 36036
 del /s /q (filename) \ 
 rd /s /q (name)
 
+#### Windows Terminal 여러줄 붙이기 경고 끄기
+
+`C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` 경로에서 `settings.json` 수정
+
+```json
+{
+    "multiLinePasteWarning": false,
+    ...
+}
+```
 
 #### 멀티부팅 이름 변경
 bcdedit /v \
