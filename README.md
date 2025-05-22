@@ -88,6 +88,15 @@ https://lightinglife.tistory.com/entry/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%97%90%EC%8
 02 00 00 00 38 00 3A 00
 3A 00 38 00
 
+#### windows 11
+cmd를 관리자 권한으로 실행한다
+
+```bash
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+slmgr /skms kms8.msguides.com
+slmgr /ato
+```
+
 
 #### Powershell
 
