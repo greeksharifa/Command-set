@@ -103,6 +103,8 @@ slmgr /ato
 최고성능 해제 \
 powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
 
+파일 수 세기 recursively \ 
+powershell -Command "(Get-ChildItem -File -Recurse | Measure-Object).Count"
 
 기본 앱 제거
 
