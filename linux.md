@@ -167,3 +167,34 @@
 | 딥러닝 패키지 설치 | `pip install torch==1.7.0+cu101 torchvision==0.8.1+cu101 torchaudio===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html` | CUDA 버전 맞춤 필요 |
 | 분석/시각화 패키지 설치 | `pip install numpy pandas matplotlib seaborn beautifulsoup4 nltk scipy scikit-learn tqdm` | 프로젝트 공통 도구 모음 |
 
+## vivid 설정
+
+Ubuntu에서 `vivid`를 최소 설정으로 붙일 때 필요한 명령만 정리했다.
+
+### 1. 기존 apt 설치 Rust/Cargo 제거
+
+```bash
+sudo apt remove -y rustc cargo
+```
+
+### 2. rustup 설치
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source "$HOME/.cargo/env"
+```
+
+### 3. vivid 설치
+
+```bash
+cargo install vivid
+```
+
+### 4. ls 색상 설정
+
+```bash
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
+echo 'export LS_COLORS="$(vivid generate one-dark)"' >> ~/.bashrc
+echo 'alias ls="ls --color=auto"' >> ~/.bashrc
+source ~/.bashrc
+```

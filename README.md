@@ -7,6 +7,7 @@
 - [github.md](./github.md): Git/GitHub 저장소 운영, 브랜치, 동기화, 복구 명령
 - [huggingface.md](./huggingface.md): Hugging Face 인증, 다운로드, 캐시, git-lfs 명령
 - [linux.md](./linux.md): Ubuntu/Linux 탐색, 검색, 권한, 디스크, 네트워크 명령
+- [mac.md](./mac.md): macOS 설치 및 설정 명령
 - [ml.md](./ml.md): CUDA/GPU, PyTorch/TensorFlow, Jupyter, ffmpeg, Graphviz 명령
 - [python.md](./python.md): Python 인터프리터, venv, pip, 환경 점검 명령
 - [remote.md](./remote.md): SSH, SCP, rsync, SFTP, 포트포워딩, 원격 다운로드 명령
