@@ -1,6 +1,6 @@
 # tmux 치트시트
 
-tmux 세션, 창, 패널, 레이아웃, 복사모드, 플러그인, 저장/복원을 빠르게 다루는 실전 명령 모음이다.
+tmux 세션, client, 창, 패널, 레이아웃, 복사모드, 플러그인, 저장/복원을 빠르게 다루는 실전 명령 모음이다.
 
 ## 빠른 찾기
 
@@ -26,6 +26,30 @@ tmux new -s work
 tmux ls
 tmux attach -t work
 ```
+
+## attached / client 진단
+
+`tmux ls`의 `(attached)`는 해당 세션에 붙어 있는 tmux client가 있다는 뜻이다. split 패널, 윈도우, 레이아웃 같은 세션 내부 view 수를 뜻하지 않는다.
+
+| 목적 | 명령 | 예시/비고 |
+| --- | --- | --- |
+| 세션별 attached 수 확인 | `tmux list-sessions -F 'session=#{session_name} attached=#{session_attached} windows=#{session_windows}'` | `attached`는 붙어 있는 client 수 |
+| 세션별 그룹 확인 | `tmux list-sessions -F 'session=#{session_name} group=#{session_group} attached=#{session_attached} windows=#{session_windows}'` | `group`이 같으면 grouped session |
+| 특정 세션의 client 확인 | `tmux list-clients -t <세션명> -F 'tty=#{client_tty} pid=#{client_pid} created=#{t:client_created}'` | 어떤 tty가 붙어 있는지 확인 |
+| 현재 터미널 tty 확인 | `tty` | 예: `/dev/pts/75` |
+| 현재 tmux client 확인 | `tmux display-message -p 'client_tty=#{client_tty} session=#{session_name} window=#{window_index}:#{window_name} pane=#{pane_index}'` | tmux 안에서 실행 |
+| 현재 client만 남기고 detach | `tmux detach-client -a -t /dev/pts/<현재값>` | `<현재값>`은 `tty` 또는 `client_tty`로 확인 |
+| 특정 세션 client 전부 detach | `tmux detach-client -s <세션명>` | 세션은 유지하고 client 연결만 끊음 |
+| 세션 종료 | `tmux kill-session -t <세션명>` | `주의`: 세션 내 작업 종료 |
+
+```bash
+tmux list-clients -t ch6-2 -F 'tty=#{client_tty} pid=#{client_pid} created=#{t:client_created}'
+tty
+tmux detach-client -a -t /dev/pts/75
+tmux list-clients -t ch6-2 -F 'tty=#{client_tty} pid=#{client_pid} created=#{t:client_created}'
+```
+
+`list-clients`에 여러 tty가 나오면 같은 세션에 여러 terminal client가 붙어 있는 상태다. `detach-client`는 client 연결만 끊고, `kill-session`은 세션과 그 안의 작업을 끝낸다. tty나 pid의 정체가 불분명하면 `who`, `w`, `ps -fp <pid>`로 해당 접속과 프로세스를 추적한다.
 
 ## 윈도우
 

@@ -11,7 +11,7 @@
 - [ml.md](./ml.md): CUDA/GPU, PyTorch/TensorFlow, Jupyter, ffmpeg, Graphviz 명령
 - [python.md](./python.md): Python 인터프리터, venv, pip, 환경 점검 명령
 - [remote.md](./remote.md): SSH, SCP, rsync, SFTP, 포트포워딩, 원격 다운로드 명령
-- [tmux_usage.md](./tmux_usage.md): tmux 세션, 윈도우, 패널, TPM, 저장/복원 명령
+- [tmux_usage.md](./tmux_usage.md): tmux 세션, client 진단, 윈도우, 패널, TPM, 저장/복원 명령
 - [troubleshooting.md](./troubleshooting.md): PATH, 라이브러리, 포트, 권한, JSON, 로그 진단 명령
 - [windows.md](./windows.md): Windows CMD/PowerShell, 시스템, 네트워크, 파일, 부팅 명령
 
