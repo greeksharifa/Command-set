@@ -14,6 +14,7 @@ Git 저장소 생성, 브랜치, 동기화, 히스토리 확인, 복구를 CLI �
 | 원격 반영 | `git pull --rebase` / `git push` | 히스토리 정리에는 `--rebase` |
 | 작업 임시 저장 | `git stash push -m "msg"` | 브랜치 전환 전 유용 |
 | 태그 확인 | `git tag -l` | 릴리스 포인트 확인 |
+| HTTPS 인증 저장 | `git config --global credential.helper store` | 토큰을 평문 파일에 저장하므로 개인 장비에서만 사용 |
 | GH CLI | `gh auth login` / `gh pr create` | GitHub 원격 작업 자동화 |
 
 ## 저장소 시작
@@ -90,6 +91,34 @@ https://github.com/greeksharifa/asdfasdfdsfdsa.git
 | push | `git push` | 현재 업스트림 기준 |
 | upstream 설정 | `git push -u origin <branch>` | 첫 푸시 때 사용 |
 
+## 인증 / credential 저장
+
+GitHub HTTPS 원격은 비밀번호 대신 personal access token(PAT)이나 `gh auth login`으로 발급된 인증 정보를 사용한다. 반복 입력을 줄이고 싶을 때 Git credential helper를 설정한다.
+
+| 목적 | 명령 | 예시/비고 |
+| -------- | -------- | -------- |
+| 현재 credential helper 확인 | `git config --global --get credential.helper` | 전역 설정 확인 |
+| 토큰을 파일에 저장 | `git config --global credential.helper store` | `~/.git-credentials`에 평문 저장 |
+| 저장 위치 지정 | `git config --global credential.helper "store --file ~/.git-credentials"` | 기본값을 명시할 때 사용 |
+| 저장된 인증 정보 삭제 | `git credential reject` | 아래 입력 예시처럼 protocol/host를 넣고 빈 줄로 종료 |
+| helper 설정 해제 | `git config --global --unset credential.helper` | 이후 인증 정보를 다시 물어봄 |
+| macOS Keychain 사용 | `git config --global credential.helper osxkeychain` | macOS에서는 평문 저장보다 권장 |
+
+`store`는 편하지만 보안 저장소가 아니라 단순 파일 저장이다. 공유 장비, 서버, 노출 가능성이 있는 개발 컨테이너에서는 `store` 대신 OS 키체인, `cache`, 또는 `gh auth login`을 우선 사용한다.
+
+```bash
+git config --global credential.helper store
+git push
+# Username: USERNAME
+# Password: GitHub personal access token
+```
+
+저장된 GitHub 인증 정보를 지울 때는 다음처럼 입력한다.
+
+```bash
+printf "protocol=https\nhost=github.com\n\n" | git credential reject
+```
+
 ## stash
 
 | 목적 | 명령 | 예시/비고 |
@@ -147,4 +176,3 @@ https://github.com/greeksharifa/asdfasdfdsfdsa.git
 | -------- | -------- | -------- |
 | Python 의존성 강제 재설치 | `pip install --upgrade --no-deps --force-reinstall -r requirements.txt` | 기존 내용 보존용 |
 | 패키지 충돌 점검 | `pip check` | 설치 무결성 확인 |
-
